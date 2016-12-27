@@ -1,3 +1,7 @@
+if (process.env.NOW_LOGS_SECRET_KEY) {
+    require('now-logs')(process.env.NOW_LOGS_SECRET_KEY);
+}
+
 const express = require('express');
 const app = express();
 const http = require('http').Server(app);
