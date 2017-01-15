@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "files": [
-    "index.js"
+    "index.js",
+    "server.js"
   ],
   "scripts": {
     "start": "node index.js"
