@@ -9,6 +9,10 @@
   ],
   "repository": "berzniz/now-logs",
   "main": "index.js",
+  "files": [
+    "index.js",
+    "server.js"
+  ],
   "scripts": {
     "start": "node index.js"
   },
