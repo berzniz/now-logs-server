@@ -1,18 +1,19 @@
 {
   "name": "now-logs-server",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "files": [
-    "index.js",
-    "server.js"
+  "version": "0.0.7",
+  "description": "realtime logs server for zeit's now",
+  "keywords": [
+    "now",
+    "logs",
+    "zeit"
   ],
+  "repository": "berzniz/now-logs",
+  "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
-  "keywords": [],
   "author": "Tal Bereznitskey <berzniz@gmail.com> (http://berzniz.com/)",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "micro": "^6.1.0",
     "now-logs": "0.0.5",
