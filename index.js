@@ -1,28 +1,14 @@
-if (process.env.NOW_LOGS_SECRET_KEY) {
-    require('now-logs')(process.env.NOW_LOGS_SECRET_KEY);
+const { NOW_LOGS_SECRET_KEY, NOW_LOGS_PORT = 3000 } = process.env;
+
+if (NOW_LOGS_SECRET_KEY) {
+    require('now-logs')(NOW_LOGS_SECRET_KEY);
 }
 
-const express = require('express');
-const app = express();
-const http = require('http').Server(app);
+const micro = require('micro');
+const http = micro(() => '');
 const io = require('socket.io')(http);
-const port = 3000;
+require('./server')(io);
 
-app.use(express.static('website'));
-
-io.on('connection', (socket) => {
-    console.log('Connection. Number of connected sockets', io.engine.clientsCount);
-    socket.on('disconnect', () => {
-        console.log('Disconnect. Number of connected sockets', io.engine.clientsCount);
-    });
-    socket.on('room', (room) => {
-        socket.join(room);
-    });
-    socket.on('emit-room', (room, text) => {
-        io.to(room).emit('message', text);
-    });
-});
-
-http.listen(port, () => {
-    console.log('listening on port', port);
-});
+http.listen(NOW_LOGS_PORT, () => {
+    console.log(`listening on port ${NOW_LOGS_PORT}`);
+})

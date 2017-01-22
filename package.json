@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "files": [
+    "index.js",
+    "server.js"
+  ],
   "scripts": {
     "start": "node index.js"
   },
@@ -10,7 +14,7 @@
   "author": "Tal Bereznitskey <berzniz@gmail.com> (http://berzniz.com/)",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.14.0",
+    "micro": "^6.1.0",
     "now-logs": "0.0.5",
     "socket.io": "^1.7.2"
   }
